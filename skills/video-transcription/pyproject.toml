@@ -1,0 +1,27 @@
+[project]
+name = "video-transcription-skill"
+version = "0.1.0"
+description = "Extract and transcribe video/audio speech into structured Markdown with timestamps and terminology calibration."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "faster-whisper>=1.0.0",
+    "onnxruntime<=1.23.2; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "huggingface-hub>=0.20.0",
+    "opencc-python-reimplemented>=0.1.7"
+]
+
+[[tool.uv.index]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+[project.scripts]
+transcribe-video = "scripts.transcribe:main"
+
+[tool.setuptools]
+packages = ["scripts"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
