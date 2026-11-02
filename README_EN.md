@@ -17,10 +17,10 @@ A curated collection of modular, production-ready AI Agent skills crafted by Han
 
 ## Skills Catalog
 
-| Skill Name | Path | Category | Highlights | Status |
+| Skill Name | What It Does | Highlights | Path | Status |
 | :--- | :--- | :--- | :--- | :---: |
-| **Video Transcription** | [`skills/video-transcription`](./skills/video-transcription) | Media / Productivity | 100% faithful verbatim transcription (strictly no summarization), semantic speaker alignment, offline INT8 inference | `v0.1.0` Ready |
-| *(More skills in progress)* | `skills/...` | Workflow / Dev | Upcoming... | Planned |
+| **Video Transcription**<br>`video-transcription` | **Full Speech-to-Text & Speaker-Aligned Transcript Generation**<br>Extracts speech from meeting recordings, videos, or audio files (MP4, MOV, MP3, WAV, etc.) into structured Markdown with precise timestamps `[mm:ss]` and clear **speaker attribution (e.g., `[Interviewer]`, `[Candidate]`, or designated participant names)**. | • **100% Faithful Verbatim**: Strictly bound by contract to prohibit auto-summarization or omitting content<br>• **Semantic Speaker Diarization**: Contextual role attribution with zero extra acoustic model overhead<br>• **Ultra-Fast & Offline**: Powered by INT8 quantization (~140MB model), transcribing 30 mins in 2-3 mins on CPU<br>• **Domain Terminology Calibration**: Built-in homophone correction dictionary + OpenCC Chinese normalization | [`skills/video-transcription`](./skills/video-transcription) | `v0.1.0` Ready |
+| *(More skills in progress)* | Productivity & Developer workflow automation skills | Stay tuned... | `skills/...` | Planned |
 
 ---
 
