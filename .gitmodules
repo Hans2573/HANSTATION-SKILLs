@@ -1,0 +1,4 @@
+[submodule "playwright-cli"]
+	path = skills/playwright-cli-hans/references/upstream
+	url = https://github.com/microsoft/playwright-cli.git
+	shallow = true
