@@ -11,12 +11,13 @@ description: 通过 Playwright CLI 操作专用 Edge Profile。用户指定专�
 
 ## 每任务一个会话
 
-1. 使用已配置给专用 Edge Profile 的本机 CDP 端点。首次配置时参照 [启动专用 Edge](references/dedicated-edge.md)，后续任务连接同一个运行中的实例。
+1. 用 Node 运行本 Skill 的 `scripts/profile-config.mjs get`，读取本机选定的 Profile 和 CDP 端点。如果返回状态码 2，先请用户选一个专用目录，也可以让用户选择默认目录。再按 [首次设置与启动专用 Edge](references/dedicated-edge.md) 保存选择。后续任务使用保存的目录和端点。用户要求更改目录或端口时，再运行 `setup`。
 2. 为任务取一个唯一的 CLI 会话名。使用该会话执行 `attach`，再用 `tab-new` 创建任务页。用户明确指定了既有标签页时，在本任务的会话中选择它，并用 `snapshot` 核对页面。
 3. 在同一工作目录执行本任务的命令，每次都带同一个 `-s=<任务会话名>`。任务各自维护当前页，并在专用 Profile 的默认浏览器上下文中共享登录状态。
 
 ```bash
-playwright-cli -s=hans-task-a attach --cdp=http://127.0.0.1:9222 --idle-timeout=0
+# pw_hans_cdp_endpoint 取自配置命令返回的 cdpEndpoint
+playwright-cli -s=hans-task-a attach --cdp="$pw_hans_cdp_endpoint" --idle-timeout=0
 playwright-cli -s=hans-task-a tab-new https://example.com/
 playwright-cli -s=hans-task-a snapshot
 ```

@@ -53,7 +53,7 @@ git submodule update --init -- skills/playwright-cli-hans/references/upstream
 
 Symlink or copy `skills/playwright-cli-hans` into your agent's skill directory. For Codex, use `~/.agents/skills/`. When copying, keep the files under `references/upstream/`. You can omit the submodule's `.git` metadata.
 
-Follow the [dedicated Edge setup](./skills/playwright-cli-hans/references/dedicated-edge.md) to configure the local CDP endpoint for the shared browser.
+Choose your own dedicated Edge profile directory on first use. Relative paths resolve from your home directory, and future tasks reuse your saved choice. [First-run setup and browser launch](./skills/playwright-cli-hans/references/dedicated-edge.md)
 
 ---
 
@@ -66,6 +66,8 @@ HANSTATION-SKILLs/
 └── skills/                      # Pure skill implementations (minimal footprint)
     ├── playwright-cli-hans/     # Dedicated Edge and a CLI session per task
     │   ├── SKILL.md
+    │   ├── scripts/
+    │   │   └── profile-config.mjs
     │   └── references/
     │       ├── dedicated-edge.md
     │       └── upstream/        # Official Microsoft Git submodule

@@ -53,7 +53,7 @@ git submodule update --init -- skills/playwright-cli-hans/references/upstream
 
 将 `skills/playwright-cli-hans` 软链接或复制到智能体的技能目录。Codex 使用 `~/.agents/skills/`。复制时保留 `references/upstream/` 里的文件，子模块的 `.git` 元数据可以省略。
 
-连接共享 Edge 前，参照 [专用 Edge 启动说明](./skills/playwright-cli-hans/references/dedicated-edge.md) 配置一次本机 CDP 端点。
+首次使用时选择自己的专用 Edge Profile 目录。相对路径从用户主目录解析，选择保存在本机供后续任务复用。[首次设置与启动说明](./skills/playwright-cli-hans/references/dedicated-edge.md)
 
 ---
 
@@ -66,6 +66,8 @@ HANSTATION-SKILLs/
 └── skills/                      # 纯净技能核心（供 Agent 挂载，零冗余）
     ├── playwright-cli-hans/     # 专用 Edge 与每任务独立 CLI 会话
     │   ├── SKILL.md
+    │   ├── scripts/
+    │   │   └── profile-config.mjs
     │   └── references/
     │       ├── dedicated-edge.md
     │       └── upstream/        # 微软官方 Git 子模块
